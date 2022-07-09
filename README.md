@@ -20,6 +20,10 @@ So it look like this
     }
 ```
 
+## Warn
+
++ Due to vpn status log contains only 4 args, I don't know which is packetIn and packetOut, just give bytesIn and bytesOut with 3rd and 4th arg
+
 ## iOS Setup
 
 ### <b>1. Add Capabillity</b>

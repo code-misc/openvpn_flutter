@@ -161,16 +161,15 @@ class OpenVPN {
           if (Platform.isIOS) {
             var valueStr = value.toString();
             var splitted = valueStr.split("_");
-            print('value is $splitted');
             var connectedOn = DateTime.tryParse(splitted[0]);
             if (connectedOn == null) return VpnStatus.empty();
             return VpnStatus(
               connectedOn: connectedOn,
               duration: _duration(DateTime.now().difference(connectedOn).abs()),
               packetsIn: splitted[1],
-              packetsOut: splitted[2],
-              byteIn: splitted[3],
-              byteOut: splitted.length > 5 ? splitted[4] : "0",
+              packetsOut: splitted[1],
+              byteIn: splitted[2],
+              byteOut: splitted[3],
             );
           } else if (Platform.isAndroid) {
             var data = jsonDecode(value);
